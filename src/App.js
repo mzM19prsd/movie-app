@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, Outlet, useNavigate } from "react-router-dom";
 
 function App() {
@@ -23,11 +23,11 @@ function App() {
             </Link>
             <button id='menuBtn'
               onClick={clickMenu}>
-              <i class='bx bx-menu'></i>
+              <i className='bx bx-menu'></i>
             </button>
           </div>
 
-          <ul className={`navlist ${Menu && "hideMenu"}`}>
+          <ul className={`navlist ${Menu ? "hideMenu" : "menu"}`}>
             <li>  <Link to={`/popular`}>Popular</Link></li>
             <li>  <Link to={`/toprated`}>Top Rated</Link></li>
             <li>  <Link to={`/upcoming`}>Upcoming</Link></li>

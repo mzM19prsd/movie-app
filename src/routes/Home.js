@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import { API_KEY, API_URL, IMAGE_BASE_URL } from '../config';
 
@@ -73,7 +73,7 @@ export default function Home() {
                                 position: 'absolute',
                                 top: '7px', right: '7px'
                             }}>
-                                <i class='bx bx-show' ></i> {movie.vote_count}
+                                <i className='bx bx-show' ></i> {movie.vote_count}
                             </span>
                         </article>
                     ))}
@@ -105,7 +105,7 @@ export default function Home() {
                                 position: 'absolute',
                                 top: '7px', right: '7px'
                             }}>
-                                <i class='bx bx-show' ></i> {movie.vote_count}
+                                <i className='bx bx-show' ></i> {movie.vote_count}
                             </span>
                         </article>
                     ))}
@@ -130,12 +130,13 @@ export default function Home() {
                     Trending Movies
                 </h4>
                 {Trending && Trending.slice(0, 4).map(movie => (
-                    <div
+                    <div key={movie.id}
                         style={{
                             backgroundImage: `url(${IMAGE_BASE_URL}w300${movie.backdrop_path})`,
                             backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center center',
                             backgroundSize: 'cover',
-                            width: '80%', height: "130px",
+                            width: '80%', height: "140px",
                             borderRadius: '5px',
                             marginBottom: '2rem',
                             position: 'relative'
@@ -145,7 +146,7 @@ export default function Home() {
                             position: 'absolute',
                             top: '7px', right: '7px'
                         }}>
-                            <i class='bx bx-show' ></i> {movie.vote_count}
+                            <i className='bx bx-show' ></i> {movie.vote_count}
                         </span>
                         <Link to={`/movie=${movie.id}`}
                             style={{
@@ -153,7 +154,9 @@ export default function Home() {
                                 bottom: '25px', left: '0',
                                 padding: '0 6px 0 13px'
                             }}>
-                            {movie.title}
+                                <h4>
+                                {movie.title}
+                            </h4>
                         </Link>
 
                     </div>
@@ -171,16 +174,17 @@ export default function Home() {
                         <div>
                             <Link to={`/movie=${movie.id}`}>
                                 <img src={`${IMAGE_BASE_URL}w200${movie.poster_path}`}
-                                    style={{ width: '90px', height: '135px' }} />
+                                    style={{ width: '100px', height: '150px' }}
+                                    alt={movie.original_title} />
                             </Link>
                         </div>
                         <div style={{
-                            padding: '1rem 1.25rem'
+                            padding: '0 1.25rem'
                         }}>
-                            <p className='descTitle'>
+                            <h4 className='descTitle'>
                                 <Link to={`/movie=${movie.id}`}>
                                     {movie.title}</Link>
-                            </p>
+                            </h4>
                             <p className='gray'>{movie.release_date}</p>
                         </div>
                     </div>

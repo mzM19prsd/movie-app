@@ -1,268 +1,269 @@
-*{
+* {
     box-sizing: border-box;
-}
-html{
+  }
+  html {
     scroll-behavior: smooth;
-}
-body{
+  }
+  body {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
-    /* background-color: rgb(20, 21, 23); */
+    font-size: 1.5rem;
     background-color: #070720;
-   
-}
-
-.wrapper {
+  }
+  .wrapper {
     min-height: 100vh;
     position: relative;
-}
-a{
+  }
+  a {
     color: inherit;
-}
-a:hover{
+  }
+  a:hover {
     text-decoration: none;
     color: inherit;
-}
-a:active{
+  }
+  a:active {
     color: inherit;
     text-decoration: none;
-}
-a:link{
+  }
+  a:link {
     color: inherit;
     text-decoration: none;
-}
-a:visited{
+  }
+  a:visited {
     color: inherit;
     text-decoration: none;
-}
-ul{
+  }
+  ul {
     margin: 0;
     padding: 0;
     list-style: none;
-}
-header{
-   background-color: none;
-   width: 100%;
-   height: 45px;
-}
-nav{
+  }
+  header {
+    background-color: none;
+    width: 100%;
+    height: 45px;
+  }
+  nav {
     position: fixed;
-    top: 0;left: 0;
-    width: 100%;  
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;  
+    align-items: center;
     background-color: #333;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     color: white;
     z-index: 999;
-}
-.navwrap{
+  }
+  .navwrap {
     padding: 1rem 7%;
-}
-#menuBtn{
+  }
+  #menuBtn {
     display: none;
-   background-color: rgb(27, 28, 29);
+    background-color: rgb(27, 28, 29);
     font-size: 2rem;
     border: none;
     border-radius: 3px;
-}
-.logo{
-    font-size: 1.75rem;
-}
-.hideMenu{
-
-}
-label{
+  }
+  .logo {
+    font-size: 2.25rem;
+  }
+  label {
     margin: 0;
-}
-.contain{
-    padding:2.5rem 7% ;
-}
-.navlist{
+  }
+  .contain {
+    padding: 2.5rem 7%;
+  }
+  .navlist {
     width: 40%;
-  display: flex;
-  justify-content: space-around;
-}
-.searchinput{
+    display: flex;
+    justify-content: space-around;
+  }
+  .searchinput {
     width: 70%;
     border: none;
     padding: 0 1rem;
     border-radius: 25px;
     color: black;
-}
-.searchinput:focus{
-outline: none;
-}
-.searchinput::-webkit-input-placeholder {
+  }
+  .searchinput:focus {
+    outline: none;
+  }
+  .searchinput::-webkit-input-placeholder {
     text-align: center;
-}
-.homerow{
-     display: flex;
-     justify-content: center; 
-}
-.homecol-1{
+  }
+  .homerow {
+    display: flex;
+    justify-content: center;
+  }
+  .homecol-1 {
     padding-right: 2rem;
     width: 72%;
     justify-content: center;
-}
-.homecol-2{
+  }
+  .homecol-2 {
     display: block;
     width: 28%;
     justify-content: center;
-}
-.imgbox{
+  }
+  .imgbox {
     width: 100%;
-   display: flex;
-   align-items: center;
-  gap: 2rem;
-}
-.moviewrap{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .moviewrap {
     display: flex;
     gap: 2rem;
-}
-.movieposter{
+  }
+  .movieposter {
     width: 100%;
-}
-.movieResults{
+  }
+  .movieResults {
     width: 70%;
-}
-.scroll::-webkit-scrollbar{
+  }
+  .scroll::-webkit-scrollbar {
     height: 6px;
-}
-.scroll::-webkit-scrollbar-thumb{
-    background-color:gainsboro; 
+  }
+  .scroll::-webkit-scrollbar-thumb {
+    background-color: gainsboro;
     border-radius: 10px;
-}
-
-.poster{
+  }
+  .poster {
     width: 100%;
     height: auto;
-    border-radius:10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
     object-fit: cover;
     object-position: center;
-}
-.media{
+  }
+  .media {
     display: flex;
     background-color: rgb(27, 28, 29);
     box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
     border-radius: 10px;
     margin: 1.5rem 0;
-}
-.video{
+    font-size: 1.75rem;
+  }
+  .searchedImg{
+      width: 250px;
+      height: 375px;
+      border-radius: 10px 0 0 10px;
+
+  }
+  .video {
     width: 100%;
     height: 50vh;
-}
-.roww{
+  }
+  .roww {
     width: 100%;
     display: flex;
-  flex-wrap: wrap;
+    flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
     padding: 2rem 0;
-}
-.pd2{
+  }
+  .pd2 {
     padding: 2.5rem 0;
-}
-article{
- width: 21%;
-background-color: rgb(27, 28, 29);
- border-radius: 10px;
- position: relative;
- font-size: 1.2rem;
-
-}
-.Thumbnail{
-width: 20%;
- font-size: 1rem;
-}
-
-.ThumbnailImg{
+  }
+  article {
+    width: 21%;
+    background-color: rgb(27, 28, 29);
+    border-radius: 10px;
+    position: relative;
+    font-size: 1.25rem;
+  }
+  .Thumbnail {
+    width: 20%;
+  }
+  .ThumbnailImg {
     height: auto;
     width: 100%;
-   object-fit: cover;
-   object-position: center;
-}
-.loadbox{
+    object-fit: cover;
+    object-position: center;
+  }
+  .loadbox {
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
-}
-.desc{
+  }
+  .desc {
     width: 100%;
     height: 45px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
-    
-}
-.descTitle{
+  }
+  .descTitle {
+    display: -webkit-box;
+    white-space: normal;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .fs175{
+    font-size: 1.75rem;
+  }
+  .descOverview {
     
     display: -webkit-box;
     white-space: normal;
     overflow: hidden;
-    -webkit-line-clamp:2;
+    -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
-}
-.descOverview{
-    display: -webkit-box;
-    white-space: normal;
-    overflow: hidden;
-    -webkit-line-clamp:6;
-    -webkit-box-orient: vertical;
-}
-.loadbtn{
+  }
+  .loadbtn {
     width: 40%;
     background-color: purple;
     border: none;
     border-radius: 5px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
-}
-footer{
-    width:100%;
-    height:3rem;   
-    
-}
-.footer{
-    position:absolute;
-    bottom:0;
+  }
+  footer {
+    width: 100%;
+    height: 3rem;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
     left: 0;
-    width:100%;
-    height:3rem;   
+    width: 100%;
+    height: 3rem;
     background-color: rgb(20, 21, 23);
     justify-content: center;
-}
-.tag{
+  }
+  .tag {
     background-color: rgb(20, 21, 23);
     border-radius: 5px;
-   padding: 0.5rem;
-}
-.green{
+    padding: 0.5rem;
+    font-size: calc(100% - 0.25rem);
+  }
+  .green {
     color: limegreen;
-}
-.orange{
+  }
+  .orange {
     color: orange;
-}
-.red{
+  }
+  .red {
     color: red;
-}
-.genrestag{
+  }
+  .genrestag {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.2);
     padding: 0 0.5rem;
-}
-.linetag{
+  }
+  .linetag {
     position: relative;
     padding-left: 1rem;
-    font-size: 18px;
-   margin: 0 0 2.75rem;
-}
-.linetag::after{
+    font-size: 2rem;
+    margin: 0 0 2.75rem;
+  }
+  .linetag::after {
     position: absolute;
     left: 0;
     top: -5px;
@@ -270,111 +271,123 @@ footer{
     width: 3.5px;
     background: #e53637;
     content: "";
-}
-.viewcount{
+  }
+  .viewcount {
     padding: 1px 3px;
     background-color: #3d3d3d;
-  font-size: 1rem;
+    font-size: 1.2rem;
     border-radius: 4px;
-   
-}
-section{
+  }
+  section {
     margin-bottom: 2.75rem;
-}
-.gray{
+  }
+  .gray {
     color: #b3b3b3;
-    font-size: 1rem;
-}
-
-@media screen and (max-width: 768px) {
-    nav{
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
     }
-    .navtop{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
+    .navtop {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
     }
-    .navlist{
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
+    .navlist {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
     }
-    .navlist>li{
-        padding: 3px;
+    .navlist > li {
+      padding: 3px;
     }
-    #formdiv{
-       width: 100%;
-        text-align: center;
-        padding-top: 3px;
+    #formdiv {
+      width: 100%;
+      text-align: center;
+      padding-top: 3px;
     }
-    .searchinput{
-        width: 40%;
+    .searchinput {
+      width: 40%;
     }
-    #menuBtn{
-       display: block;
+    #menuBtn {
+      display: block;
     }
-    .hideMenu{
-        display: none;
+    .hideMenu {
+      display: none;
     }
-    article{
-        width: 23%;
+    article {
+      width: 23%;
     }
-    .contain{
-        padding:2rem 5%;
+    .contain {
+      padding: 2rem 5%;
     }
-    .navwrap{
-        padding: 1rem 5%;
+    .navwrap {
+      padding: 1rem 5%;
     }
-    .homerow{
-        display: block;
+    .homerow {
+      display: block;
     }
-    .homecol-1{
-        width: 100%;
-        padding:0;
+    .homecol-1 {
+      width: 100%;
+      padding: 0;
     }
-    .homecol-2{
-        width: 100%;
-        display: flex;
-        justify-content: start;
+    .homecol-2 {
+      width: 100%;
+      display: flex;
+      justify-content: start;
     }
-    .homecol-2>section{
-        width: 50%;
+    .homecol-2 > section {
+      width: 50%;
     }
-    .Thumbnail{
-        width: 28%;
+    .Thumbnail {
+      width: 28%;
     }
-    .moviewrap{
-        display: block;
+    .moviewrap {
+      display: block;
     }
-    .movieposter{
-        width: 50%;
+    .movieposter {
+      width: 50%;
     }
-    .movieResults{
-        width: 100%;
+    .movieResults {
+      width: 100%;
     }
-}
-
-@media screen and (max-width: 425px) {
-    
-    article{
-        width: 46%;
+    .searchedImg{
+        width: 200px;
+        height: 300px;
     }
-    .imgbox{
-        flex-wrap: wrap;
+  }
+  @media screen and (max-width: 425px) {
+    article {
+      width: 46%;
     }
-    .homecol-2{
-        display: block;
+    .imgbox {
+      flex-wrap: wrap;
     }
-    .homecol-2>section{
-        width: 100%;
+    .homecol-2 {
+      display: block;
     }
-    .roww{
-        gap: 1.5rem;
+    .homecol-2 > section {
+      width: 100%;
     }
-    .Thumbnail{
-        width: 47%;
+    .roww {
+      gap: 1.5rem;
     }
-}
+    .Thumbnail {
+      width: 47%;
+    }
+    .media{
+        font-size: 1.5rem;
+    }
+    .descOverview{
+        -webkit-line-clamp: 3;
+    }
+    .descTitle{
+        font-size: 1.75rem;
+    }
+    .searchedImg{
+        width: 125px;
+        height: 188px;
+    }
+  }

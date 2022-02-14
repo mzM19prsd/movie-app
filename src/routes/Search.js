@@ -32,35 +32,27 @@ export default function Search() {
             return "red"
         }
     }
-    console.log(SearchedMovie)
     return (<div>
-
         <div>
             {SearchedMovie &&
                 SearchedMovie.length === 0 ? `No results found for "${params.query}"`
                 : SearchedMovie.map(movie => (
-                    <div className='media'>
+                    <div className='media' key={movie.id}>
+                        
                         <Link to={`/movie=${movie.id}`}>
-                            <img src={movie.poster_path ?
-                                `http://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfhHjGKnmhhOHQJnokGExLJjmKiCxLrfzHow&usqp=CAU'}
+                            <img className='searchedImg'
+                            src={movie.poster_path ?
+                                `${IMAGE_BASE_URL}w500${movie.poster_path}` : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfhHjGKnmhhOHQJnokGExLJjmKiCxLrfzHow&usqp=CAU'}
                                 alt={movie.original_title}
-                                style={{
-                                    width: '150px', height: '225px',
-                                    objectFit: 'cover',
-                                    objectPosition: 'center',
-                                    borderRadius: '10px 0 0 10px'
-                                }}
                             />
                         </Link>
-                        <div style={{ padding: '0 1.75rem' }}>
-                            <h4>
+                        
+                        <div style={{padding: '0 1.75rem' }}>
+                            <h3 className='descTitle'>
                                 <Link to={`/movie=${movie.id}`}>{movie.title}</Link>
-                                <span style={{ marginLeft: '2rem', fontSize: '1.5rem' }}
-                                    className={`tag ${setVoteClass(movie.vote_average)}`}>{movie.vote_average}
-                                </span>
-                            </h4>
+                            </h3>
                             <p className='gray'>{movie.release_date}</p>
-                            <p className='descOverview'>{movie.overview}</p>
+                            <p className='descOverview' >{movie.overview}</p>
                         </div>
                     </div>
                 ))

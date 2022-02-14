@@ -14,7 +14,7 @@ function Movie() {
             .then(response => response.json())
             .then(response => { setMovieCrew([...response.cast]) })
     }, [])
-    console.log(MovieCrew)
+    console.log(Movie.genres)
     const setVoteClass = (vote) => {
         if (vote >= 8) {
             return "green";
@@ -32,23 +32,28 @@ function Movie() {
                 <div className='moviewrap'>
                     <div>
                         <img className='movieposter'
-                            src={`${IMAGE_BASE_URL}w300${Movie.poster_path}`}></img>
+                            src={`${IMAGE_BASE_URL}w300${Movie.poster_path}`}
+                            alt={Movie.original_title}></img>
                     </div>
                     <div className='movieResults'>
-                        <h3>{Movie.title}
-                            <span style={{ marginLeft: '2rem', fontSize: '1.5rem' }}
+                        <h2>{Movie.title}
+                            <span style={{ marginLeft: '2rem'}}
                                 className={`tag ${setVoteClass(Movie.vote_average)}`}>{Movie.vote_average}</span>
-                        </h3>
+                        </h2>
                         <p className='gray'>
                             {Movie.release_date}, <strong>{`${Math.floor(Movie.runtime / 60)}h ${Movie.runtime % 60}m`}</strong>
                         </p>
-                        <div style={{ display: 'flex', listStyle: 'none', flexWrap: 'wrap', gap: '1rem', fontSize: '1rem' }}> {Movie.genres &&
-                            Movie.genres.map(genre => <li className='genrestag'>{genre.name}</li>)
+                        <div style={{ display: 'flex', listStyle: 'none', flexWrap: 'wrap', gap: '1rem'}}> {Movie.genres &&
+                            Movie.genres.map(genre =>
+                            <li className='genrestag' key={genre.id} >
+                                {genre.name}
+                                </li>
+                                )
                         }</div>
 
-                        <h4 style={{ paddingBottom: '0.5rem', borderBottom: '1px solid white' }}>
+                        <h3 style={{ paddingBottom: '0.5rem', borderBottom: '1px solid white' }}>
                             Over view
-                        </h4>
+                        </h3>
                         <p>{Movie.overview}</p>
                     </div>
                 </div>
@@ -56,11 +61,12 @@ function Movie() {
 
         </div>
         <div>
-            <h3>Cast</h3>
+            <h2>Cast</h2>
             <div className='scroll'
                 style={{ display: 'flex', gap: '2rem', overflowX: 'scroll' }}>
-                {MovieCrew && MovieCrew.map(cast => (<div style={{ marginBottom: '1rem' }}>
-                    <div key={cast.id}>
+                {MovieCrew && MovieCrew.map(cast => (
+                <div key={cast.id} style={{ marginBottom: '1rem' }}>
+                    <div>
                         <img src={cast.profile_path ? `${IMAGE_BASE_URL}w200${cast.profile_path}` :
                             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfhHjGKnmhhOHQJnokGExLJjmKiCxLrfzHow&usqp=CAU'}
                             alt={cast.name} style={{
