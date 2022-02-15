@@ -36,22 +36,15 @@ export default function Home() {
             })
     }, [])
 
-
-    const setVoteClass = (vote) => {
-        if (vote >= 8) {
-            return "green";
-        } else if (vote >= 6) {
-            return "orange";
-        } else {
-            return "red"
-        }
-    }
     return (<div className='homerow'>
         <div className='homecol-1'>
             <section >
                 <h4 className='linetag '>
                     <Link to={`/popular`}>
                         Popular Movies
+                    </Link>
+                    <Link to={`/popular`} className='viewMore'>
+                        view more ≫
                     </Link>
                 </h4>
                 <div className='imgbox'>
@@ -62,19 +55,15 @@ export default function Home() {
                                     alt={movie.original_title}
                                     className='poster'>
                                 </img>
-                            </Link>
-                            <div className='desc'>
-                                <span className='descTitle'>{movie.title}</span>
-                                <span className={`tag ${setVoteClass(movie.vote_average)}`}>
-                                    {movie.vote_average}
-                                </span>
-                            </div>
-                            <span className='viewcount' style={{
-                                position: 'absolute',
-                                top: '7px', right: '7px'
-                            }}>
-                                <i className='bx bx-show' ></i> {movie.vote_count}
-                            </span>
+                                <div className='infoContainer scroll'>
+                                    <div style={{padding:'0 1rem'}}>
+                                        <h4>{movie.title}</h4>
+                                        <p>
+                                            {movie.overview}
+                                        </p>
+                                    </div>
+                                </div>
+                            </Link>                         
                         </article>
                     ))}
                 </div>
@@ -83,7 +72,10 @@ export default function Home() {
             <section >
                 <h4 className='linetag '>
                     <Link to={`/toprated`}>
-                        TopRated Movies
+                    TopRated Movies
+                    </Link>
+                    <Link to={`/toprated`} className='viewMore'>
+                        view more ≫
                     </Link>
                 </h4>
                 <div className='imgbox'>
@@ -94,23 +86,20 @@ export default function Home() {
                                     alt={movie.original_title}
                                     className='poster'>
                                 </img>
-                            </Link>
-                            <div className='desc'>
-                                <span className='descTitle'>{movie.title}</span>
-                                <span className={`tag ${setVoteClass(movie.vote_average)}`}>
-                                    {movie.vote_average}
-                                </span>
-                            </div>
-                            <span className='viewcount' style={{
-                                position: 'absolute',
-                                top: '7px', right: '7px'
-                            }}>
-                                <i className='bx bx-show' ></i> {movie.vote_count}
-                            </span>
+                                <div className='infoContainer scroll'>
+                                    <div style={{padding:'0 1rem'}}>
+                                        <h4>{movie.title}</h4>
+                                        <p>
+                                            {movie.overview}
+                                        </p>
+                                    </div>
+                                </div>
+                            </Link>                         
                         </article>
                     ))}
                 </div>
             </section>
+
             <section>
                 <h4 className='linetag '>Trailer</h4>
                 <div className='video'>
@@ -130,8 +119,9 @@ export default function Home() {
                     Trending Movies
                 </h4>
                 {Trending && Trending.slice(0, 4).map(movie => (
-                    <div key={movie.id}
-                        style={{
+                    <Link to={`/movie=${movie.id}`} key={movie.id}>
+                    <div className='asideMovie'
+                    style={{
                             backgroundImage: `url(${IMAGE_BASE_URL}w300${movie.backdrop_path})`,
                             backgroundRepeat: 'no-repeat',
                             backgroundPosition: 'center center',
@@ -148,18 +138,15 @@ export default function Home() {
                         }}>
                             <i className='bx bx-show' ></i> {movie.vote_count}
                         </span>
-                        <Link to={`/movie=${movie.id}`}
-                            style={{
+                                <h4  style={{
                                 position: 'absolute',
                                 bottom: '25px', left: '0',
                                 padding: '0 6px 0 13px'
                             }}>
-                                <h4>
                                 {movie.title}
                             </h4>
-                        </Link>
-
                     </div>
+                    </Link>
                 ))}
             </section>
             <section>

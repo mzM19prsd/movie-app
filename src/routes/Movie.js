@@ -51,7 +51,7 @@ function Movie() {
                                 )
                         }</div>
 
-                        <h3 style={{ paddingBottom: '0.5rem', borderBottom: '1px solid white' }}>
+                        <h3 style={{ paddingBottom: '0.5rem', borderBottom: '1px solid black' }}>
                             Over view
                         </h3>
                         <p>{Movie.overview}</p>

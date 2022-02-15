@@ -50,6 +50,9 @@ export default function Search() {
                         <div style={{padding: '0 1.75rem' }}>
                             <h3 className='descTitle'>
                                 <Link to={`/movie=${movie.id}`}>{movie.title}</Link>
+                                <span style={{ marginLeft: '2rem'}}
+                                className={`tag ${setVoteClass(movie.vote_average)}`}>{movie.vote_average}
+                                </span>
                             </h3>
                             <p className='gray'>{movie.release_date}</p>
                             <p className='descOverview' >{movie.overview}</p>
