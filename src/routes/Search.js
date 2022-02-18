@@ -32,7 +32,7 @@ export default function Search() {
             return "red"
         }
     }
-    return (<div>
+    return (<div style={{paddingTop:'2rem'}}>
         <div>
             {SearchedMovie &&
                 SearchedMovie.length === 0 ? `No results found for "${params.query}"`

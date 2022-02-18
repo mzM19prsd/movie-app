@@ -25,7 +25,7 @@ function Movie() {
         }
     }
 
-    return (<div>
+    return (<div style={{paddingTop:'2rem'}}>
 
         <div>
             {Movie &&
