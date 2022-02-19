@@ -6,9 +6,9 @@ export default function Upcoming() {
     const [Movies, setMovies] = useState([]);
     const [page, setpage] = useState(1);
 
-    const req = () => {
-        const get = `${API_URL}movie/upcoming?api_key=${API_KEY}&language=en-US&page=${page}`;
-        fetch(get)
+    const getMovies = () => {
+        const EndPoint = `${API_URL}movie/upcoming?api_key=${API_KEY}&language=en-US&page=${page}`;
+        fetch(EndPoint)
             .then(response => response.json())
             .then(response => {
                 setMovies([...Movies, ...response.results])
@@ -16,11 +16,13 @@ export default function Upcoming() {
             })
     }
     const load = () => {
-        req()
+        getMovies()
     }
     useEffect(() => {
-        req()
+        getMovies()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+    
     return (<div>
         <div className='roww'>
             {Movies && Movies.map(movie => (

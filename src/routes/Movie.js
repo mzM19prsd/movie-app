@@ -13,8 +13,8 @@ function Movie() {
         fetch(`${API_URL}movie/${params.movieId}/credits?api_key=${API_KEY}&language=en-US`)
             .then(response => response.json())
             .then(response => { setMovieCrew([...response.cast]) })
-    }, [])
-    console.log(Movie.genres)
+    }, [params])
+
     const setVoteClass = (vote) => {
         if (vote >= 8) {
             return "green";

@@ -34,7 +34,7 @@ function App() {
           </ul>
 
           <div id='formdiv'
-            className={Menu && "hideMenu"}>
+            className={Menu ? "hideMenu" : "menu"}>
             <form onSubmit={searchOnsubmit}>
 
               <input type='search' id='searchquery'
