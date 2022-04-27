@@ -106,6 +106,12 @@
     max-height: 600px;
     object-fit: cover;
     object-position: center;
+    filter: brightness(0.9);
+    transition: all .2s ease-in-out;
+  }
+  .slideImg:hover{
+transform: scale(1.1);
+filter: none;
   }
   .homerow {
     display: flex;
@@ -183,7 +189,7 @@
   }
   article:hover .infoContainer{
     display: block;
-    background-color: rgba(26, 25, 28, 0.9);
+    background-color: rgba(26, 25, 28, 0.93);
   }
   .poster {
     width: 100%;
@@ -198,7 +204,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: none;
+    background-color: #fff;
     display: none;
     border-radius: 5px;
     overflow-y: scroll;
@@ -219,7 +225,8 @@
     width: 100%;
     object-fit: cover;
     object-position: center;
-    transition: all 0.2s linear;
+    /* transition: all 0.2s linear; */
+    transition: all .2s ease-in-out;
   }
   .loadbox {
     display: flex;
